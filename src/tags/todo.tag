@@ -13,11 +13,11 @@ todo
 
     this.now = null;
 
-    this.edit = function (e) {
+    this.edit = (e) => {
       this.text = e.target.value;
     };
 
-    this.add = function (e) {
+    this.add = (e) => {
       if (this.text) {
         this.items.push({ title: `^_^ ${this.text}` });
         this.items = _.shuffle(this.items);
@@ -27,11 +27,11 @@ todo
     };
 
     // an example how to filter items on the list
-    this.filter = function (item) {
+    this.filter = (item) => {
       return !item.hidden;
     };
 
-    this.toggle = function (e) {
+    this.toggle = (e) => {
       var item = e.item;
       item.done = !item.done;
       return true;
