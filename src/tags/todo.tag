@@ -7,7 +7,6 @@ todo
   form(onsubmit="{ add }")
     input(name="input" onkeyup="{ edit }")
     button(disabled="{ !text }") Add # { items.filter(filter).length + 1 }
-
   script.
     this.items = opts.items;
 
@@ -17,7 +16,7 @@ todo
 
     this.add = function (e) {
       if (this.text) {
-        this.items.push({ title: this.text });
+        this.items.push({ title: `^_^ ${this.text}` });
         this.text = this.input.value = '';
       }
     };
