@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: './src/entry',
   output: {
-    path: __dirname + '/public',
+    path: __dirname,
     filename: 'bundle.js'
   },
   plugins: [
@@ -13,13 +13,14 @@ module.exports = {
   ],
   module: {
     preLoaders: [
-      { test: /\.tag$/, exclude: /node_modules/, loader: 'riotjs-loader', query: { type: 'none' } }
+      { test: /\.tag$/, exclude: /node_modules/, loader: 'riotjs-loader', 
+        query: { type: 'es6' } }
     ],
     loaders: [
-      { test: /\.js|\.tag$/, exclude: /node_modules/, loader: 'babel-loader' }
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
     ]
   },
   devServer: {
-    contentBase: './public'
+    contentBase: '.'
   }
 };
