@@ -8,7 +8,9 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      riot: 'riot'
+      riot: 'riot',
+      _: 'lodash',
+      moment: 'moment'
     })
   ],
   module: {
