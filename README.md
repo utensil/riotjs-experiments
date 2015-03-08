@@ -7,13 +7,13 @@ Try to experiment [RiotJS](https://github.com/muut/riotjs) with my preferred wor
 Currently, I've made RiotJS work with:
 
 * [RiotControl](https://github.com/jimsparkman/RiotControl) (An implemenation of [Flux](https://github.com/facebook/flux) Architecture Pattern )
-* [webpack](https://github.com/webpack/webpack)
 * ES6, specifically using [Babel](https://github.com/babel/babel)
 * [Jade](https://github.com/jadejs/jade)
+* [webpack](https://github.com/webpack/webpack)
+* [Gulp](https://github.com/gulpjs/gulp)
 
 ## Plans
 
-* [Gulp](https://github.com/gulpjs/gulp)
 * [Less](https://github.com/less/less.js)
 * Multi-page app
 
