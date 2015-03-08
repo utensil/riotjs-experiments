@@ -5,9 +5,17 @@ body {
   border: 0;
 }
 
-todo {
+a {
+  text-decoration: none;
+  color: grey;
   display: block;
   max-width: 400px;
+  margin: 5% auto;
+}
+
+todoapp {
+  display: block;
+  max-width: 600px;
   margin: 5% auto;
 }
 

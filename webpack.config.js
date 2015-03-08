@@ -10,7 +10,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       riot: 'riot',
       _: 'lodash',
-      moment: 'moment'
+      moment: 'moment',
+      RiotControl: 'riotcontrol'
     })
   ],
   module: {

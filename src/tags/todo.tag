@@ -6,12 +6,28 @@ todo
       label(class="{ completed: done }") { title }
   form(onsubmit="{ add }")
     input(name="input" onkeyup="{ edit }")
-    button(disabled="{ !text }") Add # { items.filter(filter).length + 1 }
+    button(disabled="{ !text }") Add \#{ items.filter(filter).length + 1 }
+    button(disabled="{ !items.length }" onclick="{ remove }") Remove \#{ items.filter(filter).length }
   p(if="{ now }") Last updated at { now }
   script.
-    this.items = opts.items;
+    var self = this;
 
+    this.disabled = true;
+    this.items = [];
     this.now = null;
+
+    this.on('mount', () => {
+      // Trigger init event when component is mounted to page.
+      // Any store could respond to this.
+      RiotControl.trigger('todo_init');
+    });
+
+    // Register a listener for store change events.
+    RiotControl.on('todos_changed', (items, timestamp) => {
+      this.items = items;
+      this.now = timestamp;
+      this.update();
+    });
 
     this.edit = (e) => {
       this.text = e.target.value;
@@ -19,10 +35,11 @@ todo
 
     this.add = (e) => {
       if (this.text) {
-        this.items.push({ title: `^_^ ${this.text}` });
-        this.items = _.shuffle(this.items);
+        // Trigger event to all stores registered in central dispatch.
+        // This allows loosely coupled stores/components to react to same events.
+        RiotControl.trigger('todo_add', 
+          { title: `^_^ ${this.text}` });
         this.text = this.input.value = '';
-        this.now = moment().format('YYYY-MM-DD HH:mm:ss');
       }
     };
 
@@ -36,3 +53,7 @@ todo
       item.done = !item.done;
       return true;
     };
+
+    this.remove = (e) => {
+      RiotControl.trigger('todo_remove');
+    }

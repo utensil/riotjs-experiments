@@ -1,13 +1,11 @@
-require("babel/polyfill");
+require('babel/polyfill');
 require('./tags/todo.tag');
+require('./tags/todoapp.tag');
 
-riot.mount('todo', {
-  title: 'I want to behave!',
-  items: [
-    { title: 'Avoid excessive coffeine', done: true },
-    { title: 'Hidden item', hidden: true },
-    { title: 'Be less provocative' },
-    { title: 'Be nice to people' }
-  ]
-});
+import TodoStore from './todostore';
+
+var todoStore = new TodoStore(); // Create a store instance.
+RiotControl.addStore(todoStore); // Register the store in central dispatch.
+riot.mount('todoapp'); // Kickoff the Riot app.
+
 
