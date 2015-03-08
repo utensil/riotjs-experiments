@@ -1,3 +1,4 @@
+require("babel/polyfill");
 require('./tags/todo.tag');
 
 riot.mount('todo', {
