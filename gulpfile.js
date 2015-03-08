@@ -11,7 +11,7 @@ var src = './',
   webpackOptions = {
     // debug: true,
     // devtool: '#source-map',
-    // watchDelay: 200
+    watchDelay: 200
   },
   webpackConfig = {
     useMemoryFs: true,

@@ -6,6 +6,6 @@ import TodoStore from './todostore';
 
 var todoStore = new TodoStore(); // Create a store instance.
 RiotControl.addStore(todoStore); // Register the store in central dispatch.
-riot.mount('todoapp'); // Kickoff the Riot app.
+riot.mount('div#main', 'todoapp'); // Kickoff the Riot app.
 
 
