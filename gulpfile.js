@@ -6,8 +6,8 @@ var path = require('path'),
   WebpackDevServer = require('webpack-dev-server'),
   gulpWebpackBuild = require('gulp-webpack-build');
 
-var src = './',
-  dest = './js',
+var root = './',
+  dest = './',
   webpackOptions = {
     // debug: true,
     // devtool: '#source-map',
@@ -20,7 +20,7 @@ var src = './',
   CONFIG_FILENAME = gulpWebpackBuild.config.CONFIG_FILENAME;
 
 gulp.task('webpack', [], function() {
-  return gulp.src(path.join(src, CONFIG_FILENAME), { base: path.resolve(src) })
+  return gulp.src(path.join(root, CONFIG_FILENAME), { base: path.resolve(root) })
     .pipe(gulpWebpackBuild.configure(webpackConfig))
     .pipe(gulpWebpackBuild.overrides(webpackOptions))
     .pipe(gulpWebpackBuild.compile())
@@ -36,9 +36,9 @@ gulp.task('webpack', [], function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(path.join(src, '**/*.*')).on('change', function(event) {
+  gulp.watch(path.join(root, 'src/**/*.*')).on('change', function(event) {
     if (event.type === 'changed') {
-      gulp.src(event.path, { base: path.resolve(src) })
+      gulp.src(event.path, { base: path.resolve(root) })
         .pipe(gulpWebpackBuild.closest(CONFIG_FILENAME))
         .pipe(gulpWebpackBuild.configure(webpackConfig))
         .pipe(gulpWebpackBuild.overrides(webpackOptions))
