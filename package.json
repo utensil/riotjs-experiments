@@ -1,13 +1,13 @@
 {
-  "name": "riotjs-test",
+  "name": "riotjs-experiments",
   "version": "0.0.1",
-  "description": "Try to expreiment riotjs with my workflows",
+  "description": "Try to experiment RiotJS with my preferred workflows.",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --inline --hot --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/utensil/riotjs-test",
+  "repository": "https://github.com/utensil/riotjs-experiments",
   "author": "utensil",
   "license": "MIT",
   "devDependencies": {
