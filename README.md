@@ -11,9 +11,9 @@ Currently, I've made RiotJS work with:
 * ES6, specificly using [Babel](https://github.com/babel/babel)
 * [Jade](https://github.com/jadejs/jade)
 
-## Inspired by
+## Helpful references
 
-* 
+* [Baobab](https://github.com/Yomguithereal/baobab)
 * http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html
 
 ## License
