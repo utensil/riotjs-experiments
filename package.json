@@ -4,7 +4,8 @@
   "description": "Try to experiment RiotJS with my preferred workflows.",
   "main": "index.js",
   "scripts": {
-    "start": "gulp live",
+    "build": "webpack --color",
+    "dev": "webpack-dev-server --color --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "https://github.com/utensil/riotjs-experiments",
@@ -14,8 +15,6 @@
     "babel": "^4.7.1",
     "babel-core": "^4.7.1",
     "babel-loader": "^4.1.0",
-    "gulp": "^3.8.11",
-    "gulp-webpack-build": "^0.5.1",
     "jade": "^1.9.2",
     "lodash": "^3.4.0",
     "moment": "^2.9.0",

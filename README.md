@@ -10,7 +10,7 @@ Currently, I've made RiotJS work with:
 * ES6, specifically using [Babel](https://github.com/babel/babel)
 * [Jade](https://github.com/jadejs/jade)
 * [webpack](https://github.com/webpack/webpack)
-* [Gulp](https://github.com/gulpjs/gulp)
+* [NPM Scripts](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool)
 
 ## Plans
 
