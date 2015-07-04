@@ -1,11 +1,13 @@
 var webpack = require('webpack');
 
+var jsDistPath = '/dist/js/';
+
 module.exports = {
-  entry: './src/entry',
+  entry: './src/client/entry',
   output: {
     libraryTarget: "var",
-    path: __dirname + '/js',
-    filename: 'bundle.js'
+    path: __dirname + jsDistPath,
+    filename: 'app-bundle.js'
   },
   target: 'web',
   plugins: [
@@ -30,7 +32,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: '.',
-    publicPath: '/js/'
+    contentBase: __dirname,
+    publicPath: jsDistPath
   }
 };

@@ -13,10 +13,31 @@ Currently, I've made RiotJS work with:
 * [NPM Scripts](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool)
 * [Less](https://github.com/less/less.js)
 
+And organized directory structure with the following design:
+
+```
+├─src                           # Source code
+│  ├─client                     #   Source code for client side --- the browser
+│  │  ├─assets                  #   Assets: styles, images and fonts
+│  │  │  └─less                 #     Style written in Less
+│  │  ├─tags                    #     RiotJS tags for UI components written in ES6
+│  │  │  ├─*.jade.tag           #       Using Jade as template language
+│  │  │  └─*.tag                #       Using Html as template language
+│  │  └─...                     #     Control or model written in ES6
+│  └─server                     #   Source code for server side --- the backend such as express
+├─dist                          # Bundled code for distribution or production usage
+│  ├─js
+│  ├─css
+├─LICENSE
+├─README.md
+├─package.json
+├─webpack.config.js
+```
+
 ## Plans
 
 * Multi-page app
-* Reorganize directory structure
+* Handle images and fonts distribution
 * Skeleton generator
 
 ## Helpful references

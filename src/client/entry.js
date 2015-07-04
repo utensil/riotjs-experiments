@@ -1,5 +1,5 @@
 require('babel/polyfill');
-require('../assets/less/todo.less');
+require('./assets/less/todo.less');
 require('./tags/todo.jade.tag');
 require('./tags/todoapp.tag');
 
